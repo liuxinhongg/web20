@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name:"zhangsan",
+				age:19,
+				hobby:"playing"
+			} 
+			// JSON - string 
+			obj = JSON.stringify(obj);
+			window.localStorage.setItem("userobj",obj);
+		</script>
+	</body>
+</html>
