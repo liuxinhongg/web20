@@ -60,7 +60,9 @@
 	console.log(weakset);
 }
 
-/* {
+/*
+{
+	今天的案例敲会
 	作业:实现Object,Array,Set() Map()增查改删,
 	对象 <=> Map()
 	数组 <=> Set()
