@@ -4,51 +4,26 @@
 		<meta charset="utf-8">
 		<title></title>
 		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+		<style type="text/css">
+		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-			$.ajax({
-				url:"./data.json",
-				type:'get',
-				success:function(res){
-					console.log(res)
-					$.ajax({
-						url:"./data.json",
-						type:'get',
-						success:function(res){
-							console.log(res)
-							$.ajax({
-								url:"./data.json",
-								type:'get',
-								success:function(res){
-									console.log(res)
-									$.ajax({
-										url:"./data.json",
-										type:'get',
-										success:function(res){
-											console.log(res)
-											$.ajax({
-												url:"./data.json",
-												type:'get',
-												success:function(res){
-													console.log(res)
-													$.ajax({
-														url:"./data.json",
-														type:'get',
-														success:function(res){
-															console.log(res)
-														}
-													})
-												}
-											})
-										}
-									})
-								}
-							})
-						}
-					})
-				}
-			})
-		</script>
+		 <script type="text/javascript">
+		        //加载函数 
+		        window.onload=function(){ 
+		            changeColor();
+		        }
+		        //颜色变化函数
+		        function changeColor(){
+		            var r=Math.floor(Math.random()*255);
+		            var g=Math.floor(Math.random()*255);
+		            var b=Math.floor(Math.random()*255);
+		            var rgb=r.toString(16)+g.toString(16)+b.toString(16); 
+		            document.body.bgColor="#"+rgb;
+		            window.setTimeout("changeColor()",1000);
+		        }
+				console.log(parseInt("x8x8")+parseInt("8"))
+		   </script>
+		   
 	</body>
 </html>
