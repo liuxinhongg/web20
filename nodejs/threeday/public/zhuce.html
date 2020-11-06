@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<p>
+			用户名：<input type="text" name="" id="aa" value="" />
+		</p>
+		<p>
+			密码：<input type="text" name="" id="bb" value="" />
+		</p>
+		<p>
+			邮箱：<input type="text" name="" id="cc" value="" />
+		</p>
+		<p>
+			手机号：<input type="text" name="" id="dd" value="" />
+		</p>
+		<button id="btn">修改用户信息</button>
+		<script type="text/javascript">
+			$("#btn").click(function(){
+				$.ajax({
+					url:"http://localhost:3000/users/register",
+					type:"post",
+					data:{
+						username:$("#aa").val(),
+						password:$("#bb").val(),
+						email:$("#cc").val(),
+						phone:$("#dd").val(),
+					},
+					success:function(res){
+						console.log(res);
+					}
+				})
+			})
+		</script>
+	</body>
+</html>

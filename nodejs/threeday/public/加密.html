@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="javascripts/jquery.base64.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/jquery.md5.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<input type="text" name="" id="aa" value="" />
+		<input type="button" id="btn" value="加密"/>
+		<script type="text/javascript">
+			$("#btn").click(function(){
+				var pass = $("#aa").val();
+				var str = $.base64.encode(pass);//转码
+				var ps = $.md5(str)
+				console.log(ps)
+			})
+		</script>
+	</body>
+</html>
