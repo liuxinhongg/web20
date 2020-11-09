@@ -1,0 +1,40 @@
+{
+  "pages":[
+    "pages/shops/shops",
+    "pages/logs/logs",
+    "pages/index/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f00",
+    "navigationBarTitleText": "微信",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar":{
+    "color":"#8a8a8a",
+    "selectedColor":"#d81e06",
+    "backgroundColor":"#fff",
+    "list":[
+      {
+        "pagePath": "pages/shops/shops",
+        "text":"首页",
+        "iconPath":"./images/index.png",
+        "selectedIconPath":"./images/index-active.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text":"日志",
+        "iconPath":"./images/log.png",
+        "selectedIconPath":"./images/log-active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text":"个人中心",
+        "iconPath":"./images/person.png",
+        "selectedIconPath":"./images/person-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
