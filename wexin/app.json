@@ -3,7 +3,8 @@
     "pages/shops/shops",
     "pages/logs/logs",
     "pages/index/index",
-    "pages/page/page"
+    "pages/page/page",
+    "pages/goods/goods"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -35,6 +36,11 @@
         "selectedIconPath":"./images/person-active.png"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

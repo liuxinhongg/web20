@@ -4,3 +4,6 @@
     <text> Time: {{time}} </text>
   </view>
 </template>
+<view>我是页面</view>
+<navigator url="../shops/shops" open-type="switchTab">去shops首页</navigator>
+<navigator url="../goods/goods" open-type="redirect">跳转goods页面</navigator>
