@@ -24,7 +24,8 @@ Page({
     },
     x:0,
     y:0,
-    imglist:["../../images/tu.jpg","../../images/tu1.jpg","../../images/tu2.jpg"]
+    imglist:["../../images/tu.jpg","../../images/tu1.jpg","../../images/tu2.jpg"],
+    htmlSnip:`<div><h1 style="color:red"> <i color="red">hello world</i> </h1></div>`
   },
   tap(){
     // this.data.x = 30;
@@ -35,6 +36,12 @@ Page({
       x:30,
       y:30
     })
+  },
+  blur(e){
+    console.log(e.detail.value)
+  },
+  wancheng(){
+    console.log("ending")
   },
   /**
    * 生命周期函数--监听页面加载
@@ -47,7 +54,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+  
   },
 
   /**

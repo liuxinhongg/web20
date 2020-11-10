@@ -35,3 +35,15 @@ movable-view{
   width: 100%;
   height: 300rpx;
 }
+.jdt{
+  margin: auto;
+  width: 95%;
+  /* color: yellowgreen; */
+}
+.weui-input{
+  width: 600rpx;
+  height: 60rpx;
+  border: 1px solid gray;
+  margin: auto;
+  border-radius: 6rpx;
+}

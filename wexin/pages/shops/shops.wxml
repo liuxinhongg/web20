@@ -42,3 +42,20 @@
   </block>
 </swiper>
 <view>-------------------</view>
+<icon class="icon-box-img" type="success" size="63"></icon>
+<icon class="icon-box-img" type="success_no_circle" size="63"></icon>
+<icon class="icon-box-img" type="info" size="63" color="red"></icon>
+<icon class="icon-box-img" type="warn" size="63"></icon>
+<icon class="icon-box-img" type="waiting" size="63"></icon>
+<icon class="icon-box-img" type="cancel" size="63"></icon>
+<icon class="icon-box-img" type="download" size="63"></icon>
+<icon class="icon-box-img" type="warn" size="63"></icon>
+<icon class="icon-box-img" type="search" size="63"></icon>
+<icon class="icon-box-img" type="clear" size="63"></icon>
+<view class="jdt">
+
+  <progress percent="70" show-info stroke-width="6" border-radius="5" font-size="12" activeColor="yellowgreen" backgroundColor="blue" active="true" duration="10" bindactiveend="wancheng"/>
+</view>
+<rich-text nodes="{{htmlSnip}}"></rich-text>
+<text user-select="true">符合客户客户和客户看看</text>
+<input class="weui-input" bindblur="blur" placeholder="将会获取焦点"/>
