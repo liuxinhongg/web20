@@ -43,6 +43,22 @@ Page({
   wancheng(){
     console.log("ending")
   },
+
+
+  jump(){
+    wx.navigateTo({
+      url: '../page/page?name=张三',
+    })
+  },
+  jumplog(){
+    wx.switchTab({
+      url: '../logs/logs',
+    })
+    wx.setStorage({
+      data: "马海龙",
+      key: 'name',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

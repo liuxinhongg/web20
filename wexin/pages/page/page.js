@@ -11,10 +11,16 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onLoad(options) {
+    // console.log(options.name)
   },
-
+  btn(e){
+    // console.log(e);
+    // console.log(e.currentTarget.dataset.name);
+    wx.redirectTo({
+      url: '../goods/goods?info='+e.currentTarget.dataset.name,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -22,7 +22,14 @@ Page({
       }
     ]
   },
-  onLoad() {
+  onLoad(options) {
+    console.log(options)
+    wx.getStorage({
+      key: 'name',
+      success(res){
+        console.log(res.data);
+      }
+    })
     let self = this;
    wx.getLocation({
      success(res){

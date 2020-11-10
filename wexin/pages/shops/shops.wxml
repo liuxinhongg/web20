@@ -1,7 +1,7 @@
 <!-- <view class="box">
 我是块级元素
 </view> -->
-<view>
+<!-- <view>
 {{news}}
 </view>
 <text>{{date}}</text>
@@ -14,9 +14,9 @@
 <view class="item" wx:if="{{isSeen}}">我是谁，我在哪</view>
 <view>--------------------------------------</view>
 <import src="../page/page"/>
-<template is="msgItem" data="{{...item}}"/>
+<template is="msgItem" data="{{...item}}"/> -->
 <!-- <image src="../../images/tu.jpg" style="width:600rpx"></image> -->
-<movable-area>
+<!-- <movable-area>
   <movable-view x="{{x}}" y="{{y}}" direction="all" direction="all" inertia="true" out-of-bounds="true">text</movable-view>
 </movable-area>
 <button catchtap="tap" class="page-body-button" type="primary">移动</button>
@@ -52,10 +52,11 @@
 <icon class="icon-box-img" type="warn" size="63"></icon>
 <icon class="icon-box-img" type="search" size="63"></icon>
 <icon class="icon-box-img" type="clear" size="63"></icon>
-<view class="jdt">
-
-  <progress percent="70" show-info stroke-width="6" border-radius="5" font-size="12" activeColor="yellowgreen" backgroundColor="blue" active="true" duration="10" bindactiveend="wancheng"/>
+<view class="jdt"> -->
+  <!-- <progress percent="70" show-info stroke-width="6" border-radius="5" font-size="12" activeColor="yellowgreen" backgroundColor="blue" active="true" duration="10" bindactiveend="wancheng"/>
 </view>
 <rich-text nodes="{{htmlSnip}}"></rich-text>
 <text user-select="true">符合客户客户和客户看看</text>
-<input class="weui-input" bindblur="blur" placeholder="将会获取焦点"/>
+<input class="weui-input" bindblur="blur" placeholder="将会获取焦点"/> -->
+<button type="primary" size="mini" bindtap="jump">跳转</button>
+<button type="primary" size="mini" bindtap="jumplog">跳转logs</button>
