@@ -1,2 +1,44 @@
-<!--pages/shops/shops.wxml-->
-<text>pages/shops/shops.wxml</text>
+<!-- <view class="box">
+我是块级元素
+</view> -->
+<view>
+{{news}}
+</view>
+<text>{{date}}</text>
+<text>{{isNUm}}</text>
+<view wx:for="{{datalist}}"  wx:key="index">{{index}}{{item}}</view>
+<view wx:for="{{arr}}" wx:for-item="aa" wx:for-index="idx" wx:key="index">{{idx}}{{aa.title}}</view>
+<view wx:if="{{num>10}}">比10大</view>
+<view wx:elif="{{num<10}}">比10小</view>
+<view wx:else>等于10</view>
+<view class="item" wx:if="{{isSeen}}">我是谁，我在哪</view>
+<view>--------------------------------------</view>
+<import src="../page/page"/>
+<template is="msgItem" data="{{...item}}"/>
+<!-- <image src="../../images/tu.jpg" style="width:600rpx"></image> -->
+<movable-area>
+  <movable-view x="{{x}}" y="{{y}}" direction="all" direction="all" inertia="true" out-of-bounds="true">text</movable-view>
+</movable-area>
+<button catchtap="tap" class="page-body-button" type="primary">移动</button>
+<view class="page-section-spacing">
+  <scroll-view scroll-y="true" style="height: 300rpx;" >
+    <view id="demo1" class="scroll-view-item demo-text-1" style="background:red">1111</view>
+    <view id="demo2"  class="scroll-view-item demo-text-2" style="background:aqua">2222</view>
+    <view id="demo3" class="scroll-view-item demo-text-3" style="background:gray">3333</view>
+  </scroll-view>
+</view>
+<view class="page-section-spacing">
+  <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+    <view id="demo1" class="scroll-view-item_H demo-text-1">1111</view>
+    <view id="demo2"  class="scroll-view-item_H demo-text-2">2222</view>
+    <view id="demo3" class="scroll-view-item_H demo-text-3">3333</view>
+  </scroll-view>
+</view>
+<swiper indicator-dots="true" autoplay="true" interval="1000" duration="500">
+  <block wx:for="{{imglist}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view>-------------------</view>
