@@ -2,6 +2,8 @@
 <template is="msgItem" data="{{...item}}"/>
 <navigator url="../page/page">跳转page页</navigator>
 <navigator url="../index/index" open-type="switchTab">跳转个人中心</navigator>
-<map longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" show-location class="map"></map>
-<canvas canvas-id="canvas" style="width:600rpx;height:400rpx;background:pink;"></canvas>
+<!-- <map longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" show-location class="map"></map>
+<canvas canvas-id="canvas" style="width:600rpx;height:400rpx;background:pink;"></canvas> -->
 <!-- <audio  name="You Raise Me Up" author="author" src="../../images/Westlife - You Raise Me Up (KTV版伴奏).mp3" id="myAudio" controls loop></audio> -->
+<button bindtap="chooseImg">选择图片</button>
+<button bindtap="savaImg">保存图片</button>

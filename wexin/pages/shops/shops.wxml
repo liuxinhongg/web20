@@ -58,5 +58,34 @@
 <rich-text nodes="{{htmlSnip}}"></rich-text>
 <text user-select="true">符合客户客户和客户看看</text>
 <input class="weui-input" bindblur="blur" placeholder="将会获取焦点"/> -->
-<button type="primary" size="mini" bindtap="jump">跳转</button>
-<button type="primary" size="mini" bindtap="jumplog">跳转logs</button>
+<!-- <button type="primary" size="mini" bindtap="jump">跳转</button>
+<button type="primary" size="mini" bindtap="jumplog">跳转logs</button> -->
+<!-- <swiper indicator-dots="true"
+  autoplay="true" interval="3000" duration="1000">
+  <block wx:for="{{bannerlist}}" wx:key="*this">
+    <swiper-item>
+     <image src="{{item.img}}"></image>
+    </swiper-item>
+  </block>
+</swiper> -->
+<aa imglist="{{bannerlist}}" bannerHeight="300rpx" url="img"></aa>
+<view class="page-section-spacing">
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view class="twoItem">
+      <view wx:for="{{goodsSort}}" wx:key="index" wx:for-item="goods" class="scroll-view-item_H {{ step == index ? 'active' : '' }}" bindtap="change" data-id="{{index}}" data-name="{{goods.name}}">
+      <image src="{{goods.icon}}" class="icon"></image>
+      <view>{{goods.name}}</view>
+    </view>
+    </view>
+    
+  </scroll-view>
+</view>
+<view>
+  <view class="tejia">——特价——</view>
+  <view class="content">
+    <view class="sort" wx:for="{{datalist}}" wx:key="index">
+      <image class="img" src="{{item.pict_url}}"></image>
+      <view class="title">{{item.category_name}}</view>
+    </view>
+  </view>
+</view>

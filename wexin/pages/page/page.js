@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    // console.log(options.name)
+    console.log(options)
   },
   btn(e){
     // console.log(e);

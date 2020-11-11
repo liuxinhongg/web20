@@ -25,7 +25,22 @@ Page({
     x:0,
     y:0,
     imglist:["../../images/tu.jpg","../../images/tu1.jpg","../../images/tu2.jpg"],
-    htmlSnip:`<div><h1 style="color:red"> <i color="red">hello world</i> </h1></div>`
+    htmlSnip:`<div><h1 style="color:red"> <i color="red">hello world</i> </h1></div>`,
+    bannerlist:[],
+    goodsSort:[],
+    datalist:[],
+    step:0,
+    info:""
+  },
+  change(e){
+    console.log(e);
+    this.setData({
+      step:e.currentTarget.dataset.id,
+      info:e.currentTarget.dataset.name,
+    })
+    wx.navigateTo({
+      url: '../page/page?name='+this.data.info,
+    })
   },
   tap(){
     // this.data.x = 30;
@@ -63,7 +78,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.showToast({
+      title: '加载中...',
+      icon: 'loading',
+      duration: 5000
+    })
+    let self = this;
+    wx.request({
+      url: 'https://www.wumeili.top/w/website/bannerList',
+      method:"GET",
+      success:(res)=>{
+        console.log(res);
+        this.setData({
+          bannerlist:res.data.data
+        })
+      }
+    })
+    wx.request({
+      url: 'https://www.wumeili.top/w/website/findGoodsTypeList',
+      method:'GET',
+      success:res=>{
+        console.log(res);
+        this.setData({
+          goodsSort:res.data.data
+        })
+      }
+    })
+    wx.request({
+      url: 'https://www.wumeili.top/w/website/findGoodsList',
+      method:'GET',
+      data:{
+        info:"特价",	
+        pageNo: 1
+      },
+      success:res=>{
+        console.log(res);
+        wx.hideToast();
+        this.setData({
+          datalist:res.data.data.tbk_dg_material_optional_response.result_list.map_data
+        })
+      }
+    })
   },
 
   /**
