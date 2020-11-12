@@ -1,3 +1,4 @@
+const aa = require("../../utils/config");
 Page({
 
   /**
@@ -85,16 +86,27 @@ Page({
       duration: 5000
     })
     let self = this;
-    wx.request({
-      url: 'https://www.wumeili.top/w/website/bannerList',
-      method:"GET",
-      success:(res)=>{
-        // console.log(res);
-        this.setData({
-          bannerlist:res.data.data
-        })
-      }
+    aa.get("/w/website/bannerList",{},res=>{
+      this.setData({
+        bannerlist:res.data.data
+      })
     })
+    // wx.request({
+    //   url: 'https://www.wumeili.top/w/website/bannerList',
+    //   method:"GET",
+    //   success:(res)=>{
+    //     // console.log(res);
+    //     this.setData({
+    //       bannerlist:res.data.data
+    //     })
+    //   }
+    // })
+    aa.promget("/w/website/findGoodsTypeList",{}).then(res=>{
+      this.setData({
+        goodsSort:res.data.data
+      })
+    })
+    /*
     wx.request({
       url: 'https://www.wumeili.top/w/website/findGoodsTypeList',
       method:'GET',
@@ -104,7 +116,7 @@ Page({
           goodsSort:res.data.data
         })
       }
-    })
+    })*/
     this.shuju(this.data.page)
   },
   shuju(val){
