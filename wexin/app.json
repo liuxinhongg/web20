@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/index/index",
     "pages/page/page",
-    "pages/goods/goods"
+    "pages/goods/goods",
+    "pages/sort/sort"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -20,6 +21,12 @@
       {
         "pagePath": "pages/shops/shops",
         "text":"首页",
+        "iconPath":"./images/index.png",
+        "selectedIconPath":"./images/index-active.png"
+      },
+      {
+        "pagePath": "pages/sort/sort",
+        "text":"分类",
         "iconPath":"./images/index.png",
         "selectedIconPath":"./images/index-active.png"
       },

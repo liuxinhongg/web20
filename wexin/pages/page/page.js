@@ -5,14 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    leftdata:[],
+    rightdata:[],
+    state:0,
+    name:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    console.log(options)
+    console.log(options);
+    this.setData({
+      state:options.id,
+      name:options.name
+    })
+    this.getsort();
+    this.getdata(this.data.name)
+  },
+  changeStyle(e){
+    this.setData({
+      state:e.currentTarget.dataset.id,
+      name:e.currentTarget.dataset.name
+    })
+  },
+  getdata(value){
+    wx.request({
+      url: 'https://www.wumeili.top/w/website/findGoodsList',
+      method:'GET',
+      data:{
+        info:value,
+        pageNo:1
+      },
+      success:res=>{
+        console.log(res);
+        this.setData({
+          rightdata:res.data.data.tbk_dg_material_optional_response.result_list.map_data
+        })
+      }
+    })
+  },
+  getsort(){
+    wx.request({
+      url: 'https://www.wumeili.top/w/website/findGoodsTypeList',
+      method:'GET',
+      success:res=>{
+        this.setData({
+          leftdata:res.data.data
+        })
+      }
+    })
   },
   btn(e){
     // console.log(e);
@@ -52,8 +94,8 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-
+  onPullDownRefresh() {
+    console.log(11);
   },
 
   /**

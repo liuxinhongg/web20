@@ -77,7 +77,6 @@
       <view>{{goods.name}}</view>
     </view>
     </view>
-    
   </scroll-view>
 </view>
 <view>

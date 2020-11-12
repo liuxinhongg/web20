@@ -1,4 +1,4 @@
-<template name="msgItem">
+<!-- <template name="msgItem">
   <view>
     <text> {{index}}: {{msg}} </text>
     <text> Time: {{time}} </text>
@@ -7,4 +7,23 @@
 <view>我是页面</view>
 <navigator url="../shops/shops" open-type="switchTab">去shops首页</navigator>
 <navigator url="../goods/goods" open-type="redirect">跳转goods页面</navigator>
-<view bindtap="btn" data-name="李四">跳转goods页面去</view>
+<view bindtap="btn" data-name="李四">跳转goods页面去</view> -->
+<input type="text" class="oInput"/>
+<view class="content">
+  <view class="page-left">
+    <scroll-view scroll-y="true" style="height: 100%;">
+      <view class="scroll-view-left {{state==index ? 'active' :''}}" wx:for="{{leftdata}}" bindtap="changeStyle" wx:key="index" data-id="{{index}}" data-name="{{item.name}}">{{item.name}}</view>
+   </scroll-view>
+  </view>
+  <view class="page-right">
+    <scroll-view scroll-y="true" style="height: 100%;" >
+      <view class="scroll-view-right" >
+        <view class="box" wx:key="index" wx:for="{{rightdata}}" wx:for-item="goods">
+          <image src="{{goods.pict_url}}" class="tu"></image>
+          <view class="title">{{goods.short_title}}</view>
+        </view>
+        
+      </view>
+    </scroll-view>
+  </view>
+</view>

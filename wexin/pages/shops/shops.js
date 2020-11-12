@@ -30,16 +30,17 @@ Page({
     goodsSort:[],
     datalist:[],
     step:0,
-    info:""
+    info:"",
+    page:1
   },
   change(e){
-    console.log(e);
+    // console.log(e);
     this.setData({
       step:e.currentTarget.dataset.id,
       info:e.currentTarget.dataset.name,
     })
     wx.navigateTo({
-      url: '../page/page?name='+this.data.info,
+      url: '../page/page?name='+this.data.info+'&id='+this.data.step,
     })
   },
   tap(){
@@ -53,10 +54,10 @@ Page({
     })
   },
   blur(e){
-    console.log(e.detail.value)
+    // console.log(e.detail.value)
   },
   wancheng(){
-    console.log("ending")
+    // console.log("ending")
   },
 
 
@@ -88,7 +89,7 @@ Page({
       url: 'https://www.wumeili.top/w/website/bannerList',
       method:"GET",
       success:(res)=>{
-        console.log(res);
+        // console.log(res);
         this.setData({
           bannerlist:res.data.data
         })
@@ -98,21 +99,25 @@ Page({
       url: 'https://www.wumeili.top/w/website/findGoodsTypeList',
       method:'GET',
       success:res=>{
-        console.log(res);
+        // console.log(res);
         this.setData({
           goodsSort:res.data.data
         })
       }
     })
+    this.shuju(this.data.page)
+  },
+  shuju(val){
+   
     wx.request({
       url: 'https://www.wumeili.top/w/website/findGoodsList',
       method:'GET',
       data:{
         info:"特价",	
-        pageNo: 1
+        pageNo: val
       },
       success:res=>{
-        console.log(res);
+        // console.log(res);
         wx.hideToast();
         this.setData({
           datalist:res.data.data.tbk_dg_material_optional_response.result_list.map_data
@@ -152,15 +157,15 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    
+  onPullDownRefresh () {
   },
-
+  
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+    this.data.page++;
+    this.shuju(this.data.page)
   },
 
   /**

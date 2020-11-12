@@ -1,1 +1,61 @@
 /* pages/page/page.wxss */
+/**/
+ .oInput{
+  width: 400rpx;
+  height: 60rpx;
+  margin: 20rpx auto;
+  border: 2rpx solid #999;
+} 
+.content{
+  width: 100%;
+  height: 100vh;
+  height: calc(100vh - 104rpx);
+  display: flex;
+  justify-content: flex-start;
+}
+.page-left{
+  width: 160rpx;
+  background-color: #999;
+}
+.scroll-view-left{
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+ 
+}
+.active{
+  border-left: 10rpx solid red;
+  background-color: white;
+}
+.page-right{
+  flex: 1;
+  margin: 0 20rpx;
+  background-color: red;
+}
+.scroll-view-right{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.box{
+  width: 160rpx;
+  height: 220rpx;
+  margin: 10rpx;
+}
+.tu{
+  width: 160rpx;
+  height: 160rpx;
+}
+.title{
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
