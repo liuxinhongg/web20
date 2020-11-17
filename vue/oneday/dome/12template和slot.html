@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<web>
+				<div>
+					<h1><font color="red">{{news}}</font></h1>
+					<h1><font color="yellowgreen">{{msg}}</font></h1>
+				</div>
+			</web>
+		</div>
+		<template id="box">
+			<div>
+				<h2>我是h2的开头</h2>
+				<slot></slot>
+				<h2>我是h2的结尾</h2>
+			</div>
+		</template>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					news:"今天周二",
+					msg:"下周下雪呢！！！"
+				},
+				components:{
+					'web':{
+						template:"#box"
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

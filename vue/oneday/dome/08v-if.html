@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-if="isShow">我已经显示了</div>
+			<div v-else>我不知道显示了吗</div>
+			<div v-if="coupon_info">{{coupon_info}}</div>
+			<div v-else>暂无优惠</div>
+			<div v-if="num>100">大于100</div>
+			<div v-else-if="num<100">小于100</div>
+			<div v-else>等于100</div>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					isShow:false,
+					coupon_info:"满9元减1元",
+					num:103
+				}
+			})
+		</script>
+	</body>
+</html>

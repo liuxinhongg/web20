@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<hello></hello>
+		</div>
+		<script type="x-template" id="box">
+			<div>
+				<slot></slot>
+				<h1 @click="change">{{title}}</h1>
+				<ul>
+					<li v-for="(shi,index) in pome" :key="index">{{shi}}</li>
+				</ul>
+			</div>
+		</script>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					news:"今天周二",
+					msg:"下周下雪呢！！！"
+				},
+				components:{
+					"hello":{
+						template:"#box",
+						data(){
+							return {
+								title:"hello world",
+								pome:["关关雎鸠","在河之洲","窈窕淑女","君子好逑"]
+							}
+						},
+						methods:{
+							change(){
+								this.title = "你好！世界~"
+							}
+						}
+					},
+					
+				}
+			})
+		</script>
+	</body>
+</html>
