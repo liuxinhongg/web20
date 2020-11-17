@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<a v-bind:href="link" target="_blank">我想去百度溜达</a>
+			<a :href="urlLink">我想去bootcdn</a>
+			<img :src="img" >
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					link:"http://www.baidu.com",
+					urlLink:"https://www.bootcdn.cn/",
+					img:"../img/cat1.jpg"
+				}
+			})
+		</script>
+	</body>
+</html>

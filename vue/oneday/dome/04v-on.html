@@ -14,11 +14,10 @@
 	</head>
 	<body>
 		<div id="app">
-			<button type="button"  v-on:click="change">点击</button>
+			<!-- <button type="button"  v-on:click="change">点击</button> -->
 			<button type="button"  @click="change">点击</button>
-			<div class="box" v-show="isShow">
-				
-			</div>
+			<input type="text" @keydown="dianji" />
+			<div class="box" v-show="isShow"></div>
 		</div>
 		<script type="text/javascript">
 			let vm = new Vue({
@@ -30,7 +29,16 @@
 				methods:{
 					change(){
 						this.isShow=!this.isShow
-					}
+					},
+					dianji(e){
+						console.log(e)
+						 let key = e.keyCode;
+						if(key < 48 || key > 57){
+							event.preventDefault();
+							console.log("键码是："+key+", key:"+e.key)
+						// console.log("我是0-9之间的键码");
+						} 
+					},
 				}
 				
 			})

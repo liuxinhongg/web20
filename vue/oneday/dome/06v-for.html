@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!-- unorderList -->
+			<ul>
+				<!-- 再项目中报错： -->
+				<!-- <li v-for="aa in datalist">{{aa}}</li> -->
+				<!-- 解决办法 -->
+				<li v-for="(aa,i) in datalist" :key="i">{{i}}{{aa}}</li>
+			</ul>
+			<!-- orderList -->
+			<ol>
+				<li v-for="(pome,index) in titleList" :key="index">
+					<img :src="pome.img" width="30">
+					<b>{{pome.title}}</b>
+				</li>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					datalist:["鹅鹅鹅","曲项向天歌","白毛浮绿水","红掌拨清波"],
+					titleList:[
+						{ title:"床前明月光",img:"../img/cat1.jpg" },
+						{ title:"疑是地上霜",img:"../img/cat2.jpg" },
+						{ title:"举头望明月",img:"../img/cat3.jpg" },
+						{ title:"低头思故乡",img:"../img/cat1.jpg" },
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
