@@ -1,2 +1,9 @@
 <!--pages/goods/goods.wxml-->
 <text>pages/goods/goods.wxml</text>
+<input type="text" placeholder="请输入内容" class="sr" bindblur="sortgoods"/>
+<view class="neirong">
+  <view wx:for="{{list}}">
+    <image src="{{item.pict_url}}" class="tup"></image>
+    <view class="name">{{item.short_title}}</view>
+  </view>
+</view>

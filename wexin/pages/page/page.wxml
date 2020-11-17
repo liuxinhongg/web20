@@ -8,7 +8,7 @@
 <navigator url="../shops/shops" open-type="switchTab">去shops首页</navigator>
 <navigator url="../goods/goods" open-type="redirect">跳转goods页面</navigator>
 <view bindtap="btn" data-name="李四">跳转goods页面去</view> -->
-<input type="text" class="oInput"/>
+<input type="text" class="oInput" bindfocus="getInput" placeholder="输入"/>
 <view class="content">
   <view class="page-left">
     <scroll-view scroll-y="true" style="height: 100%;">

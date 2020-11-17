@@ -117,7 +117,7 @@ Page({
         })
       }
     })*/
-    this.shuju(this.data.page)
+    this.shuju(this.data.page);
   },
   shuju(val){
    

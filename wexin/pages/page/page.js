@@ -14,6 +14,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+  getInput(){
+    wx.navigateTo({
+      url: '../goods/goods',
+    })
+  },
   onLoad(options) {
     console.log(options);
     this.setData({
