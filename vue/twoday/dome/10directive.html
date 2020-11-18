@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<div v-red>{{name}}</div>
+		</div>
+		<script type="text/javascript">
+			/* Vue.directive("red",{
+				bind:function(el){
+					el.style.backgroundColor="red";
+					el.style.color="white"
+				}
+			})
+			new Vue({
+				el:"#app",
+				data:{
+					name:"张三"
+				}
+			}) */
+			let vm = new Vue({
+				el:"#app",
+				data:{
+					name:"张三"
+				},
+				directives:{
+					"red":{
+						bind:function(el){
+							el.style.backgroundColor="red";
+							el.style.color="white"
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

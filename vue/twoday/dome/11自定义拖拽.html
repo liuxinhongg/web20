@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.aa{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-drag class="aa"></div>
+		</div>
+		<script type="text/javascript">
+			Vue.directive("drag",{
+				bind:function(el){
+					el.onmousedown = function(event){
+						var deltaX = event.clientX - el.offsetLeft;
+						var deltaY = event.clientY - el.offsetTop;
+						el.onmousemove = function(event){
+							var x = event.clientX - deltaX;
+							var y = event.clientY - deltaY;
+							el.style.left = x +"px";
+							el.style.top = y +"px";
+						}
+						document.onmouseup = function(){
+							document.onmousemove = null;
+						}
+					}
+				}
+			})
+			new Vue({
+				el:"#app"
+			})
+		</script>
+	</body>
+</html>
