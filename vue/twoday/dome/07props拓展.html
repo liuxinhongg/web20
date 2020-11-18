@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<web-aa :num="50" prop-b="哈哈" msg="abc" :num-one="200" :cust="88"></web-aa>
+		</div>
+		<template id="box">
+			<div>
+				<!-- -->
+				 <h1>{{num}}</h1>
+				<h2><font color="red">{{propB}}</font></h2>
+				<h3>{{msg}}</h3>
+				<h3>{{numOne}}</h3>
+				<h3>{{obj}}</h3>
+				<h3>{{cust}}</h3>
+			</div>
+		</template>
+		<script type="text/javascript">
+			Vue.component("web-aa",{
+				template:"#box",
+				props:{
+					num:Number,
+					propB:[Number,String],
+					msg:{
+						type:String,
+						required:true
+					},
+					numOne:{
+						type:Number,
+						default:100
+					},
+					obj:{
+						type:Object,
+						default:function(){
+							return {news:"好消息"}
+						}
+					},
+					cust:{
+						validator:function(value){
+							return value>10
+						}
+					}
+				}
+			})
+			new Vue({
+				el:"#app",
+				data:{
+				}
+			})
+		</script>
+	</body>
+</html>

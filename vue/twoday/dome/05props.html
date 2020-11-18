@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<zgj name="张光姐" age="18" sex="{a:'男'}"></zgj>
+		</div>
+		<template id="box">
+			<div>
+				<h1>{{name}}</h1>
+				<h2><font color="red">{{age}}</font></h2>
+				<h3>{{sex}}</h3>
+			</div>
+		</template>
+		<script type="text/javascript">
+			Vue.component("zgj",{
+				template:"#box",
+				props:["name","age","sex"]
+			})
+			new Vue({
+				el:"#app"
+			})
+		</script>
+	</body>
+</html>
