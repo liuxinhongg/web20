@@ -24,14 +24,21 @@
     methods:{
       go(){
         // this.$router.push("/home?name="+this.name+"&age="+this.age);
-        /**/ 
-        this.$router.push({
+        /**/
+        /* this.$router.push({
           path:"/home",
           query:{
             name:"张三",
             age:19
           }
-        }); 
+        }); */
+        this.$router.push({
+          name:"home",
+          params:{
+            name:"李四",
+            age:20
+          }
+        })
       }
     }
   }

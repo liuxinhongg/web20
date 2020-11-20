@@ -32,6 +32,11 @@ module.exports = {
   module: {
     rules: [
       {
+      //需要你手动添加，相当于是编译识别sass! 
+         test: /\.scss$/,
+          loader: 'sass-loader!style-loader!css-loader',
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig

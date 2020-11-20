@@ -80,6 +80,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.request({
+      url: 'https://baxian.soft-shop.cn/admin/ajax.php?action=select&table=type&where=1',
+      method:"POST",
+      header:{ "Content-Type": "application/x-www-from-urlencoded"
+               },
+      success:res=>{
+        console.log(res);
+      }
+    })
+    // aa.post('/admin/ajax.php?action=select&table=type&where=1',(res)=>{
+    //   console.log(res)
+    // })
     wx.showToast({
       title: '加载中...',
       icon: 'loading',

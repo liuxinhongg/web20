@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import home from '@/components/home'
 import work from '@/components/work'
+import page from '@/views/page'
+import login from '@/views/login'
 const User = {
   template:`<div><h1>我是父组件</h1><router-view/></div>`
 }
@@ -28,6 +30,16 @@ let router = new Router({
             path: '/home',
             name: 'home',
             component: home
+        },
+        {
+          path:"/page",
+          name:"page",
+          component:page
+        },
+        {
+          path:"/login",
+          name:"login",
+          component:login
         },
         {
             path: '/work/:id',

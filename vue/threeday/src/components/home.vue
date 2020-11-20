@@ -16,8 +16,8 @@
     },
     mounted() {
       console.log(this.$route);
-      this.aa = this.$route.query.name
-      this.bb = this.$route.query.age
+      this.aa = this.$route.params.name
+      this.bb = this.$route.params.age
     }
   }
 </script>
