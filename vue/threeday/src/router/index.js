@@ -5,6 +5,7 @@ import home from '@/components/home'
 import work from '@/components/work'
 import page from '@/views/page'
 import login from '@/views/login'
+import data from '@/views/data'
 const User = {
   template:`<div><h1>我是父组件</h1><router-view/></div>`
 }
@@ -24,8 +25,7 @@ let router = new Router({
     linkExactActiveClass: "nav",
     routes: [{
             path: '/',
-            name: 'HelloWorld',
-            component: HelloWorld
+            redirect:'/data'
         }, {
             path: '/home',
             name: 'home',
@@ -35,6 +35,11 @@ let router = new Router({
           path:"/page",
           name:"page",
           component:page
+        },
+        {
+          path:"/data",
+          name:"data",
+          component:data
         },
         {
           path:"/login",
