@@ -6,7 +6,8 @@ const store = new Vuex.Store({
   state:{
     num:100,
     name:"张三",
-    age:18
+    age:18,
+    Authorization:localStorage.getItem('userToken') ? localStorage.getItem('userToken') :''
   },
   getters:{
     count:state=>{
@@ -14,6 +15,9 @@ const store = new Vuex.Store({
     }
   },
   mutations:{
+    changLogin(state,user){
+      state.Authorization=user.logintoken
+    },
     increment(state,pload){
       // setTimeout(()=>{
         state.num +=pload.n

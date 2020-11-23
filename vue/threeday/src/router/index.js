@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import home from '@/components/home'
 import work from '@/components/work'
+import userlogin from '@/components/login'
 import page from '@/views/page'
 import login from '@/views/login'
 import data from '@/views/data'
@@ -21,7 +22,6 @@ const NotFount = {
   template:`<div> <h1> <i>404,您访问的页面不存在</i> </h1>  </div>`
 }
 Vue.use(Router)
-
 let router = new Router({
     mode: "history",
     linkExactActiveClass: "nav",
@@ -37,6 +37,11 @@ let router = new Router({
           path:"/fenye",
           name:"fenye",
           component:fenye
+        },
+        {
+          path:"/ulog",
+          name:"ulog",
+          component:userlogin
         },
         {
           path:"/count",
@@ -112,5 +117,18 @@ let router = new Router({
           }
         }
     ]
+})
+router.beforeEach((to,from,next)=>{
+  console.log(to)
+  if(to.path==='/ulog'){
+    next()
+  }else{
+    let token = localStorage.getItem('userToken');
+    if(token==null||token==""){
+      next("/ulog")
+    }else{
+      next()
+    }
+  }
 })
 export default router

@@ -16,6 +16,13 @@ module.exports = {
                 pathRewrite: { //需要rewrite
                     '^/api': 'https://www.wumeili.top'
                 }
+            },
+            '/nodeapi': {
+                target: 'http://192.168.1.103:3000', //接口域名
+                changeOrigin: true, //是否跨域
+                pathRewrite: { //需要rewrite
+                    '^/nodeapi': 'http://192.168.1.103:3000'
+                }
             }
         },
 
