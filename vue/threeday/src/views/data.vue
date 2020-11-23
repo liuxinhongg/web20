@@ -8,24 +8,33 @@
       </el-carousel-item>
     </el-carousel>
     <el-table :data="tableData" style="width: 80%;margin: 20px auto;" border>
-      <el-table-column type="index" label="日期" width="180"></el-table-column>
-      <el-table-column prop="picture" label="头像" width="180">
+      <el-table-column type="index" label="序号" width="180"></el-table-column>
+      <el-table-column prop="img" label="头像" width="180">
         <template slot-scope="scope">
           <div>
-            <img :src="scope.row.picture" width="80"/>
+            <img :src="scope.row.img" width="80"/>
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="name" label="姓名" width="180"></el-table-column>
-      <el-table-column prop="date" label="日期">
+      <el-table-column prop="title" label="姓名" width="180"></el-table-column>
+      <el-table-column prop="ct" label="日期">
         <template slot-scope="scope">
           <div>
-            <h3 class="text"> {{scope.row.date}}</h3>
+            <h3 class="text"> {{scope.row.ct}}</h3>
           </div>
         </template>
       </el-table-column>
-      <el-table-column prop="address" label="地址"></el-table-column>
     </el-table>
+     <div class="block">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChange"
+          :current-page.sync="currentPage"
+          :page-size="pagesize"
+          layout="total, prev, pager, next"
+          :total="totalNum">
+        </el-pagination>
+      </div>
   </div>
 </template>
 
@@ -35,35 +44,42 @@
       return {
         bannerList:[],
         imgurl: require('../../static/001.png'),
-        tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄',
-          picture:require('../../static/002.png')
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄',
-          picture:require('../../static/003.png')
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          picture:require('../../static/004.png')
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄',
-          picture:require('../../static/002.png')
-        }]
+        tableData: [],
+        currentPage:1,
+        pagesize:20,
+        totalNum:0
       }
     },
     mounted() {
-      this.$http.get("/api/w/website/bannerList").then(res=>{
-        console.log(res)
-        this.bannerList = res.data.data
-      })
+      // ?showapi_appid=46452&page=1&maxResult=20&showapi_sign=c3bc2247155b4219bffb60cac4fd315c
+     this.getdata();
     },
+    methods:{
+      getdata(){
+        this.$http.get("http://route.showapi.com/341-2",{
+          params:{
+            showapi_appid:"46452",
+            page:this.currentPage,
+            maxResult:this.pagesize,
+            showapi_sign:"c3bc2247155b4219bffb60cac4fd315c"
+          }
+        }).then(res=>{
+          console.log(res);
+          this.tableData = res.data.showapi_res_body.contentlist;
+          this.totalNum = res.data.showapi_res_body.allNum
+        })
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+      },
+      handleCurrentChange(val) {
+        console.log(`当前页: ${val}`);
+        this.currentPage = val;
+        if(this.currentPage){
+          this.getdata()
+        }
+      }
+    }
   }
 </script>
 

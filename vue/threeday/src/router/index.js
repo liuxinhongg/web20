@@ -6,6 +6,8 @@ import work from '@/components/work'
 import page from '@/views/page'
 import login from '@/views/login'
 import data from '@/views/data'
+import fenye from '@/views/fenye'
+import count from '@/views/count'
 const User = {
   template:`<div><h1>我是父组件</h1><router-view/></div>`
 }
@@ -30,6 +32,16 @@ let router = new Router({
             path: '/home',
             name: 'home',
             component: home
+        },
+        {
+          path:"/fenye",
+          name:"fenye",
+          component:fenye
+        },
+        {
+          path:"/count",
+          name:"count",
+          component:count
         },
         {
           path:"/page",
