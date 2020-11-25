@@ -3,17 +3,26 @@
     <div class="topbox">
       <img src="../assets/001.png" />
       <ul class="topUl">
-      	<li>导航一</li>
-      	<li>导航二</li>
-      	<li>导航三</li>
-      	<li>导航四</li>
-      	<li>导航五</li>
+      	<li v-for="(item,index) in datalist" :key="index">{{item.name}}</li>
       </ul>
     </div>
   </div>
 </template>
 
 <script>
+  export default {
+    data(){
+      return {
+
+      }
+    },
+    props:{
+      datalist:{
+        type:Array,
+        required:true
+       }
+    }
+  }
 </script>
 
 <style lang="scss">

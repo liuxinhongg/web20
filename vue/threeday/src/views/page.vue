@@ -1,6 +1,6 @@
 <template>
   <div>
-    <top/>
+    <top :datalist="navList"/>
     <div class="box">
       <i class="el-icon-grape ziti"></i>
       <i class="el-icon-sugar sugar"></i>
@@ -24,7 +24,7 @@
       <div class="content">
         <el-scrollbar style="height: 100%;overflow-x: hidden;">
           <el-row>
-            <el-col :span="6" v-for="(o, index) in 12" :key="o" offset="2">
+            <el-col :span="6" v-for="(o, index) in 12" :key="o" :offset='2'>
               <el-card :body-style="{ padding: '0px' }"style="margin: 10px;">
                 <img src="../assets/001.png" width="200">
                 <div style="padding: 14px;">
@@ -39,8 +39,9 @@
           </el-row>
         </el-scrollbar>
       </div>
+    <h1>{{sousuo}}</h1>
     </div>
-    <bot/>
+    <bot @titlechange="getdata($event)"/>
   </div>
 </template>
 
@@ -51,12 +52,32 @@
     components:{
       top,
       bot
+    },
+    data(){
+      return {
+        sousuo:'',
+        navList:[
+          { name:'导航一',age:18 },
+          { name:'导航二',age:18 },
+          { name:'导航三',age:18 },
+          { name:'导航四',age:18 },
+          { name:'导航五',age:18 },
+        ]
+      }
+    },
+    methods:{
+      // 父向子传值(属性传值)
+      // 子向父传值(事件传值[this.$emit('自定义事件名',向父组件传的内容)])
+      getdata(val){
+        console.log(val);
+        this.sousuo = val
+      }
     }
   }
 </script>
 
 <style scoped lang="scss">
- 
+
   .box{
     width: 100%;
     height: 900px;
